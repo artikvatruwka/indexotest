@@ -1,0 +1,26 @@
+export default {
+  testRunner: 'jest',
+  jest: {
+    projectType: 'custom',
+    configFile: 'package.json',
+    enableFindRelatedTests: false,
+  },
+  coverageAnalysis: 'perTest',
+  mutate: [
+    'src/**/*.ts',
+    'src/**/*.tsx',
+    '!src/**/*.test.{ts,tsx}',
+    '!src/app/**',
+    '!src/shared/theme.ts',
+    '!src/shared/config/constants.ts',
+    '!src/types/**',
+    '!src/**/*.styles.ts',
+    '!src/shared/ui/card.tsx',
+    '!src/shared/ui/screen.tsx',
+  ],
+  ignoreStatic: true,
+  cleanTempDir: true,
+  thresholds: { high: 90, low: 80, break: 80 },
+  timeoutMS: 60000,
+  reporters: ['clear-text', 'progress', 'json'],
+};
